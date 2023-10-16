@@ -1,25 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE html><!-- Declaration of the document type as HTML -->
+<html lang="en"> <!-- Start of the HTML document with 'en' as the language -->
 <head>
-    <meta charset="UTF-8">
-    <title>Markerless Mobile Web AR Example</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+    <meta charset="UTF-8"><!-- Set the character encoding to UTF-8 -->
+    <title>AR based Computer Networking Learning</title><!-- Set the title of the web page -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script><!-- Include the A-Frame library -->
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script><!-- Include the AR.js extension for A-Frame -->
 </head>
-<body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam; geolocUser: false; debugUIEnabled: false;">
+<body style="margin: 0; overflow: hidden;"><!-- Set body styles to remove margins and hidden overflow -->
+    <a-scene embedded arjs="sourceType: webcam; geolocUser: false; debugUIEnabled: false;"><!-- Create an A-Frame scene for AR with specific attributes -->
         <!-- Create an A-Frame scene for markerless augmented reality with geolocation tracking -->
         <!-- <a-entity camera gps-camera rotation-reader></a-entity> -->
 
         <!-- 3D model to display -->
 
         <a-entity
-        gltf-model="url(mp3_file_icon.glb)"
+        gltf-model="url(mp3_file_icon.glb)" 
         scale="0.3 0.3 0.3"
         position="0 0 -15"
         rotation="1 260 0"      
         id="moving-entity3">
         </a-entity>
+
+<!-- gltf-model="url(/mp3_file_icon.glb)"  Specifies the 3D model to be loaded from the specified URL 
+ scale="0.3 0.3 0.3"  Sets the scale of the 3D model to 30% of its original size in all dimensions 
+ position="0 0 -15"  Defines the initial position of the 3D model in 3D space (x, y, z coordinates) 
+ rotation="1 260 0"  Defines the initial rotation of the 3D model (x, y, z angles) 
+ id="moving-entity3">  Assigns the unique ID "moving-entity3" to this A-Frame entity for JavaScript reference 
+-->
 
         <a-entity
         gltf-model="url(gaming_laptop.glb)"
@@ -141,7 +149,7 @@
         // <!-- Get the element with the ID "moving-entity" -->
         const initialX_1 = -1; // Starting position on the right
         const finalX_1 = -5;  // Ending position on the left
-        const speed = 0.01;
+        const speed = 0.01; // Movement speed
         let currentPosition_1 = initialX_1;
 
         // Function to move the GLB model from right to left
