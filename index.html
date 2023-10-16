@@ -16,8 +16,8 @@
         <a-entity
         gltf-model="url(mp3_file_icon.glb)"
         scale="0.3 0.3 0.3"
-        position="-1 4 -15"
-        rotation="0 260 0"      
+        position="0 0 -15"
+        rotation="1 260 0"      
         id="moving-entity3">
         </a-entity>
 
@@ -31,7 +31,7 @@
         <a-entity
         gltf-model="url(mp3_file_icon.glb)"
         scale="0.3 0.3 0.3"
-        position="-1 2 -15"
+        position="0 2 -15"
         rotation="0 260 0"      
         id="moving-entity2">
         </a-entity>
@@ -73,17 +73,17 @@
 
         <a-entity
             gltf-model="url(clouds.glb)"
-            scale="0.50 5.50 1.50"
+            scale="0.50 6 1.50"
             position="0 -1 -15"
             rotation="0 260 0" 
-        ></a-entity>
+        ></a-entity> 
 
         
 
         <a-entity
             gltf-model="url(mp3_file_icon.glb)"
             scale="0.3 0.3 0.3"
-            position="2 -2 -15"
+            position="0 0 -15"
             rotation="0 260 0"      
             id="moving-entity1" 
         ></a-entity>
@@ -91,10 +91,41 @@
         <a-entity
         gltf-model="url(mp3_file_icon.glb)"
         scale="0.3 0.3 0.3"
-        position="-1 -1 -15"
-        rotation="0 260 0"      
-        id="moving-entity4">
+        position="0 1 -15"
+        rotation="0 260 0"
+        id="moving-entity4"      
+        >
         </a-entity>
+<!-- -->
+
+        <!-- <a-entity
+        gltf-model="url(/mp3_file_icon.glb)"
+        scale="0.3 0.3 0.3"
+        position="4 -1 -15"
+        rotation="0 260 0"
+        id="moving-entity5"
+        animation__position="property: position; from: 4 -1 -15; to: 0 0 -15; dur: 2000; easing: linear; loop: true; repeat: indefinite"
+      ></a-entity> -->
+
+      <a-entity
+      gltf-model="url(mp3_file_icon.glb)"
+      scale="0.3 0.3 0.3"
+      position="4 -1 -15"
+      rotation="0 260 0"
+      
+      animation__move-left="property: position; from: 4 -1 -15; to: 0 1 -15; dur: 5000; easing: linear; "
+       animation__move-right="property: position; from: 0 1 -15; to: 4 2.5 -15; dur: 5000; easing: linear; startEvents: animationcomplete__move-left"
+       animation__move-left-again="property: position; from: 4 2.5 -15; to: 0 1 -15; dur: 5000; easing: linear; startEvents: animationcomplete__move-right"
+    
+       ></a-entity>
+    
+    
+      <!-- position = left/right up/down ahead/backward
+    
+     animation__slant-right="property: position; from: 0 1 -15; to: -6 4 -15; dur: 1000; easing: linear; startEvents: animationcomplete__move-left"
+    
+    -->
+        
 
         <a-entity
             gltf-model="url(rak_server.glb)"
@@ -126,8 +157,13 @@
             requestAnimationFrame(moveEntity_1);
         }
 
-        // Call the moveEntity function in the animation loop
+        setTimeout(() => {
+        // Call the moveEntity function after the delay
         moveEntity_1();
+    }, 15000);
+
+        // Call the moveEntity function in the animation loop
+        //moveEntity_1();
 
 
         //2nd wala mp3 file animation
@@ -151,8 +187,12 @@
             requestAnimationFrame(moveEntity_2);
         }
 
-        // Call the moveEntity function in the animation loop
+        setTimeout(() => {
+        // Call the moveEntity function after the delay
         moveEntity_2();
+    }, 15000);
+        // Call the moveEntity function in the animation loop
+        //moveEntity_2();
        
 
         //1st wala mp3 file animation for pc
@@ -176,8 +216,12 @@
             requestAnimationFrame(moveEntity_3);
         }
 
-        // Call the moveEntity function in the animation loop
+        setTimeout(() => {
+        // Call the moveEntity function after the delay
         moveEntity_3();
+    }, 15000);
+        // Call the moveEntity function in the animation loop
+        //moveEntity_3();
 
         
         //4th wala mp3 file animation for pc
@@ -201,9 +245,41 @@
             requestAnimationFrame(moveEntity_4);
         }
 
-        // Call the moveEntity function in the animation loop
+    setTimeout(() => {
+        // Call the moveEntity function after the delay
         moveEntity_4();
+    }, 15000); // 15 seconds delay (15000 milliseconds)
+
+        // Call the moveEntity function in the animation loop
+        //moveEntity_4();
        
+
+       
+
+
+        //    //5th wala mp3 file animation for pc
+        //    const movingEntity_5 = document.querySelector("#moving-entity5"); 
+        // <!-- Get the element with the ID "moving-entity" -->
+        // const initialX_5 = 4; // Starting position on the right
+        // const finalX_5 = 0;  // Ending position on the left
+        //const speed = 0.01;
+        // let currentPosition_5 = initialX_5;
+
+        // Function to move the GLB model from right to left
+        // function moveEntity_5() {
+        //     currentPosition_5 -= speed;
+        //     movingEntity_5.setAttribute("position", `${currentPosition_5} -1 -15`);
+
+        //     // Reset the position to the initialX when it reaches the finalX
+        //     if (currentPosition_5 <= finalX_5) {
+        //         currentPosition_5 = initialX_5;
+        //     }
+
+        //     requestAnimationFrame(moveEntity_5);
+        // }
+
+        // Call the moveEntity function in the animation loop
+        //moveEntity_5();
     </script>
 </body>
 </html>
