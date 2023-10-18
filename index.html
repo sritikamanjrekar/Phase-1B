@@ -3,7 +3,7 @@
 <html lang="en"> <!-- Start of the HTML document with 'en' as the language -->
 <head>
     <meta charset="UTF-8"><!-- Set the character encoding to UTF-8 -->
-    <title>AR based Computer Networking Learning</title><!-- Set the title of the web page -->
+    <title>File Transfer Protocol</title><!-- Set the title of the web page -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script><!-- Include the A-Frame library -->
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script><!-- Include the AR.js extension for A-Frame -->
 </head>
@@ -15,7 +15,7 @@
         <!-- 3D model to display -->
 
         <a-entity
-        gltf-model="url(mp3_file_icon.glb)" 
+        gltf-model="url(/mp3_file_icon.glb)" 
         scale="0.3 0.3 0.3"
         position="0 0 -15"
         rotation="1 260 0"      
@@ -29,15 +29,24 @@
  id="moving-entity3">  Assigns the unique ID "moving-entity3" to this A-Frame entity for JavaScript reference 
 -->
 
+            <!-- Add a text entity -->
+            <a-entity
+            text="value: Devices; align: center; width: 4; color: white"
+            position="-5.7 5 -15"
+            scale="2 2 2"
+            visible="true"
+
+            ></a-entity>
+
         <a-entity
-        gltf-model="url(gaming_laptop.glb)"
+        gltf-model="url(/gaming_laptop.glb)"
         scale="0.5 0.5 0.5"
         position="-6 2 -15"
         rotation="0 260 0" 
         ></a-entity>
 
         <a-entity
-        gltf-model="url(mp3_file_icon.glb)"
+        gltf-model="url(/mp3_file_icon.glb)"
         scale="0.3 0.3 0.3"
         position="0 2 -15"
         rotation="0 260 0"      
@@ -45,51 +54,66 @@
         </a-entity>
 
         <a-entity
-        gltf-model="url(desktop_computer.glb)"
+        gltf-model="url(/desktop_computer.glb)"
         scale="2.0 2.0 2.0"
-
         position="-6 4.2 -16"
         rotation="0 0 0" 
         ></a-entity>
 
         
 
-
         <a-entity
-        gltf-model="url(gaming_laptop.glb)"
+        gltf-model="url(/gaming_laptop.glb)"
         scale="0.5 0.5 0.5"
         position="-6 0 -15"
         rotation="0 260 0" 
         ></a-entity>
 
         <a-entity
-        gltf-model="url(desktop_computer.glb)"
+        gltf-model="url(/desktop_computer.glb)"
         scale="2.0 2.0 2.0"
-
         position="-6 -1.2 -16"
         rotation="0 0 0" 
         ></a-entity>
 
         <a-entity
-        gltf-model="url(desktop_computer.glb)"
+        gltf-model="url(/desktop_computer.glb)"
         scale="2.0 2.0 2.0"
 
         position="5 -1 -16"
         rotation="0 0 0" 
         ></a-entity>
 
+         <!-- Add a text entity -->
+         <a-entity
+         text="value: This Device Uploads File; align: center; width: 2; color: white"
+         position="5 -2 -16"
+         scale="2 2 2"
+         visible="true"
+     
+        ></a-entity>
+
+        
+
 
         <a-entity
-            gltf-model="url(clouds.glb)"
+            gltf-model="url(/clouds.glb)"
             scale="0.50 6 1.50"
             position="0 -1 -15"
             rotation="0 260 0" 
         ></a-entity> 
 
-        
+        <!-- Add a text entity -->
+         <a-entity
+         text="value: Internet; align: center; width: 4; color: white"
+         position="0 -2 -15"
+         scale="2 2 2"
+         visible="true"
+     
+        ></a-entity>
 
         <a-entity
-            gltf-model="url(mp3_file_icon.glb)"
+            gltf-model="url(/mp3_file_icon.glb)"
             scale="0.3 0.3 0.3"
             position="0 0 -15"
             rotation="0 260 0"      
@@ -97,13 +121,26 @@
         ></a-entity>
 
         <a-entity
-        gltf-model="url(mp3_file_icon.glb)"
+        gltf-model="url(/mp3_file_icon.glb)"
         scale="0.3 0.3 0.3"
         position="0 1 -15"
         rotation="0 260 0"
         id="moving-entity4"      
         >
         </a-entity>
+
+        <!-- Add a text entity -->
+ <a-entity
+ text="value:Devices using internet downloads 
+ file from ftp.example.com; align: center; width: 3; color: white"
+ position="-3.4 -2 -15"
+ scale="2 2 2"
+ visible="false"
+ id="arText"
+></a-entity>
+
+
+
 <!-- -->
 
         <!-- <a-entity
@@ -116,15 +153,29 @@
       ></a-entity> -->
 
       <a-entity
-      gltf-model="url(mp3_file_icon.glb)"
+      gltf-model="url(/mp3_file_icon.glb)"
       scale="0.3 0.3 0.3"
       position="4 -1 -15"
       rotation="0 260 0"
       
-      animation__move-left="property: position; from: 4 -1 -15; to: 0 1 -15; dur: 5000; easing: linear; "
-       animation__move-right="property: position; from: 0 1 -15; to: 4 2.5 -15; dur: 5000; easing: linear; startEvents: animationcomplete__move-left"
-       animation__move-left-again="property: position; from: 4 2.5 -15; to: 0 1 -15; dur: 5000; easing: linear; startEvents: animationcomplete__move-right"
+      animation__move-left="property: position; from: 4 -1 -15; to: 0 1 -15; dur: 10000; easing: linear; "
+       animation__move-right="property: position; from: 0 1 -15; to: 4 2.5 -15; dur: 10000; easing: linear; startEvents: animationcomplete__move-left"
+       animation__move-left-again="property: position; from: 4 2.5 -15; to: 0 1 -15; dur: 10000; easing: linear; startEvents: animationcomplete__move-right"
     
+       ></a-entity>
+
+        <!-- Add a text entity -->
+        <a-entity
+        text="value:User connects to server 
+        and upload file via
+        internet; align: center; width: 2; color: white"
+        position="4 -1.4 -15"
+        scale="2 2 2"
+        visible="true"
+        animation__move-left="property: position; from: 4 -1.4 -15; to: 0 0 -15; dur: 10000; easing: linear; "
+        animation__move-right="property: position; from: 0 0 -15; to: 4 2 -15; dur: 10000; easing: linear; startEvents: animationcomplete__move-left"
+        animation__move-left-again="property: position; from: 4 2 -15; to: 0 0 -15; dur: 10000; easing: linear; startEvents: animationcomplete__move-right"
+     
        ></a-entity>
     
     
@@ -134,9 +185,27 @@
     
     -->
         
+ <!-- Add a text entity -->
+ <a-entity
+ text="value:FTP (File Transfer Protocol): Standard for file transfer between computers over networks, serving as a communication language in a global context. Users worldwide can upload files to an FTP server for others to access and download using the FTP protocol.; align: left; width: 2; color: white"
+ position="3 4.5 -15"
+ scale="2 2 2"
+ visible="true"
+ 
+></a-entity>
+
+
+     <!-- Add a text entity -->
+     <a-entity
+     text="value: FTP Server (Address: 'ftp.example.com' ); align: center; width: 2; color: white"
+     position="4.5 3.5 -15"
+     scale="2 2 2"
+     visible="true"
+     
+        ></a-entity>
 
         <a-entity
-            gltf-model="url(rak_server.glb)"
+            gltf-model="url(/rak_server.glb)"
             scale="5 5 6"
             position="4 2 -15"
             rotation="0 0 0" 
@@ -168,7 +237,7 @@
         setTimeout(() => {
         // Call the moveEntity function after the delay
         moveEntity_1();
-    }, 15000);
+    }, 30000);
 
         // Call the moveEntity function in the animation loop
         //moveEntity_1();
@@ -198,7 +267,7 @@
         setTimeout(() => {
         // Call the moveEntity function after the delay
         moveEntity_2();
-    }, 15000);
+    }, 30000);
         // Call the moveEntity function in the animation loop
         //moveEntity_2();
        
@@ -227,7 +296,7 @@
         setTimeout(() => {
         // Call the moveEntity function after the delay
         moveEntity_3();
-    }, 15000);
+    }, 30000);
         // Call the moveEntity function in the animation loop
         //moveEntity_3();
 
@@ -256,7 +325,7 @@
     setTimeout(() => {
         // Call the moveEntity function after the delay
         moveEntity_4();
-    }, 15000); // 15 seconds delay (15000 milliseconds)
+    }, 30000); // 15 seconds delay (15000 milliseconds)
 
         // Call the moveEntity function in the animation loop
         //moveEntity_4();
@@ -288,6 +357,16 @@
 
         // Call the moveEntity function in the animation loop
         //moveEntity_5();
+
+
+        // Function to display text after a delay
+        function showText() {
+            const arText = document.querySelector("#arText");
+            arText.setAttribute("visible", true);
+        }
+
+        // Call the showText function after a delay of 5 seconds (5000 milliseconds)
+        setTimeout(showText, 30000);
     </script>
 </body>
 </html>
